@@ -1,0 +1,61 @@
+
+{% extends 'layout.html' %}
+{%block content%}
+<div class="form">
+	<h3 style="text-align: center; font-weight: bold; font-size: 30px;">Registation</h3>
+	<form   method="post">
+		{% csrf_token %}
+		<table>
+			<tr>
+				<td><label>Name:</label></td>
+				<td><textarea name="name" rows="1"></textarea></br/></br/></td>
+			</tr>
+			<tr>
+				<td><label>ID:</label></td>
+				<td><input type="text" name="id"></br/></br/></td>
+			</tr>
+			
+			
+			<tr>
+				<td><input class="button" type="submit" name="submit" value="Create account"></td>
+			
+			
+				
+				
+				
+			</tr>
+		</table>
+	</form>
+	{% if msg1 %}
+		<font color="green">{{msg1}}</font>
+	{% endif %}
+</div>	
+<style>
+
+div.form{
+	display: block;
+	text-align: center;
+}
+form{
+	display: inline-block;
+	margin-left:auto ;
+	margin-right: auto;
+	text-align : left;
+	
+}
+	.shope{
+		
+		color:#c41228;
+		font-family: 'Noto Serif', serif;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 50px;
+	
+	text-decoration: none;
+}
+
+	
+</style>
+
+
+{%endblock%}

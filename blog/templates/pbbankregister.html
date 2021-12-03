@@ -1,0 +1,86 @@
+ 
+
+	{% extends 'layout.html' %}
+	{%block content%}
+<div class="form">
+	<h3 style="text-align: center; font-weight: bold; font-size: 30px;">Public Bank Registation</h3>
+	<form   method="post">
+		{% csrf_token %}
+		<table >
+			<tr>
+				<td><label>IFSC:</label></td>
+				<td><textarea name="ifsc" rows="1"></textarea></br/></br/></td>
+			</tr>
+			<tr>
+				<td><label>Bank ID:</label></td>
+				<td><input type="text" name="id"></br/></br/></td>
+			</tr>
+            <tr>
+				<td><label>Branch:</label></td>
+				<td><input type="text" name="branch"></br/></br/></td>
+			</tr>
+            <tr>
+				<td><label>Address:</label></td>
+				<td><input type="text" name="address"></br/></br/></td>
+			</tr>
+            <tr>
+				<td><label>City:</label></td>
+				<td><input type="text" name="city"></br/></br/></td>
+			</tr>
+            <tr>
+				<td><label>District:</label></td>
+				<td><input type="text" name="district"></br/></br/></td>
+			</tr>
+            <tr>
+				<td><label>State:</label></td>
+				<td><input type="text" name="state"></br/></br/></td>
+			</tr>
+			<tr>
+				<td><label>Bank Name:</label></td>
+				<td><input type="text" name="bankname"></br/></br/></td>
+			</tr>
+			
+			
+			<tr>
+				<td><input class="button" type="submit" name="submit" value="Create account"></td>
+			
+			
+				
+				
+				
+			</tr>
+		</table>
+	</form>
+	{% if msg1 %}
+		<font color="green">{{msg1}}</font>
+	{% endif %}
+</div>	
+<style>
+
+div.form{
+	display: block;
+	text-align: center;
+}
+form{
+	display: inline-block;
+	margin-left:auto ;
+	margin-right: auto;
+	text-align : left;
+	
+}
+	.shope{
+		
+		color:#c41228;
+		font-family: 'Noto Serif', serif;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 50px;
+	
+	text-decoration: none;
+}
+
+	
+</style>
+{%endblock%}
+
+

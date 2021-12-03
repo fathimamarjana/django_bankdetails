@@ -1,0 +1,53 @@
+
+{% extends 'layout.html' %}
+{%block content%}
+      <div >
+     
+        <h2 style="color:Tomato;font-size:xx-large;">Bank Dashboard </h2> 
+
+      </div>
+     
+      <form method="post" action="{% url 'bankdashboard'%}"  >
+        {% csrf_token %}
+       
+        <div style="color: aliceblue;">
+        <label>IFSC:</label>
+        <input type="text" name="ifsc">
+       
+      <input class="button" type="submit" name="submit" value="Search ">
+     
+    </div>
+    <br> <br>
+      <table class="table" border="3px" style="color:white;" >
+        <thead class="thead-dark">
+          <tr>
+            <th>IFSC</th>
+            <th>Bank ID</th>
+            <th>Branch</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>District</th>
+            <th>State</th>
+            
+            
+          </tr>
+        </thead>
+        <tbody>
+          {% for user in user %}
+          <tr>
+            <td>{{user.ifsc}}</td>
+            <td>{{user.bank_id}}</td>
+            <td>{{user.branch}}</td>
+            <td>{{user.address}}</td>
+            <td>{{user.city}}</td>
+            <td>{{user.district}}</td>
+            <td>{{user.state}}</td>
+            
+           
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      </div>
+      </form>
+    {%endblock%}
